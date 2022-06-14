@@ -1,0 +1,27 @@
+﻿<Window
+    x:Class="Volleyball_Serve_Clock.View.TimerWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Volleyball_Serve_Clock.View"
+    xmlns:local1="clr-namespace:Volleyball_Serve_Clock.ViewModel"
+    xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Timer"
+    Width="800"
+    Height="450"
+    Background="Black"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local1:TimerViewModel />
+    </Window.DataContext>
+    <Grid Background="{Binding BackGround.Value}">
+        <TextBlock
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="500"
+            Foreground="White"
+            Text="{Binding Display.Value}" />
+    </Grid>
+</Window>

@@ -1,0 +1,98 @@
+﻿<Window
+    x:Class="Volleyball_Serve_Clock.View.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Volleyball_Serve_Clock"
+    xmlns:local1="clr-namespace:Volleyball_Serve_Clock.ViewModel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Control Serve Clock"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local1:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                Width="999999"
+                Padding="10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="{Binding BackGround.Value}"
+                FontSize="40"
+                Foreground="White"
+                Text="{Binding Display.Value}"
+                TextAlignment="Center" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="5"
+                    Padding="5"
+                    Command="{Binding ServeClock15Command}"
+                    FontSize="20">
+                    End of Rally (15sec)
+                </Button>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="5"
+                    Padding="5"
+                    Command="{Binding ServeClock8Command}"
+                    FontSize="20">
+                    Servce Clock (8sec)
+                </Button>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="5"
+                    Padding="5"
+                    Command="{Binding TimeOutCommand}"
+                    FontSize="20">
+                    TimeOut (30sec)
+                </Button>
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="5"
+                    Padding="5"
+                    Command="{Binding BetweenSetsCommand}"
+                    FontSize="20">
+                    Between Set (3min)
+                </Button>
+
+                <TextBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="5" />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="5"
+                    Padding="5"
+                    Command="{Binding CancelCommand}"
+                    FontSize="20">
+                    Cancel
+                </Button>
+            </Grid>
+            <TextBlock
+                Margin="10"
+                FontSize="20"
+                Text="To change of window size, Use WIN + allow key."
+                TextWrapping="Wrap" />
+        </StackPanel>
+    </Grid>
+</Window>
